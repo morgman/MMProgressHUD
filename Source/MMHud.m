@@ -15,11 +15,11 @@
 
 CGFloat    const MMProgressHUDDefaultFontSize           = 16.f;
 
-CGFloat    const MMProgressHUDMaximumWidth              = 300.f;
+CGFloat    const MMProgressHUDMaximumWidth              = 500.f;
 CGFloat    const MMProgressHUDMinimumWidth              = 100.f;
 CGFloat    const MMProgressHUDContentPadding            = 5.f;
 
-CGFloat    const MMProgressHUDAnimateInDurationLong     = 1.5f;
+CGFloat    const MMProgressHUDAnimateInDurationLong     = 1.0f;
 CGFloat    const MMProgressHUDAnimateInDurationMedium   = 0.75f;
 CGFloat    const MMProgressHUDAnimateInDurationNormal   = 0.35f;
 CGFloat    const MMProgressHUDAnimateInDurationShort    = 0.25f;
@@ -29,7 +29,7 @@ CGFloat    const MMProgressHUDAnimateOutDurationLong    = 0.75f;
 CGFloat    const MMProgressHUDAnimateOutDurationMedium  = 0.55f;
 CGFloat    const MMProgressHUDAnimateOutDurationShort   = 0.35f;
 
-CGSize const MMProgressHUDDefaultContentAreaSize = { 100.f, 100.f };
+CGSize const MMProgressHUDDefaultContentAreaSize = { 300.f, 300.f };
 CGSize const MMProgressHUDProgressContentAreaSize = { 40.f, 40.f };
 CGSize const MMProgressHUDProgressMaximumAreaSize = {200.0f, 200.0f};
 
@@ -96,7 +96,7 @@ NSString * const MMProgressHUDFontNameNormal = @"HelveticaNeue-Light";
 
 - (CGSize)titleLabelSizeForTitleText:(NSString *)titleText {
     CGSize titleSize=CGSizeZero;
-    NSInteger numberOfLines = 20;
+    NSInteger numberOfLines = 1;
     
     CGFloat lineHeight;
     if ([self respondsToSelector:@selector(setTintColor:)]) {
@@ -110,7 +110,7 @@ NSString * const MMProgressHUDFontNameNormal = @"HelveticaNeue-Light";
 #pragma clang diagnostic pop
     }
     CGFloat targetWidthIncrementor = 25.f;
-    for (CGFloat targetWidth = MMProgressHUDMinimumWidth; numberOfLines > 2; targetWidth += targetWidthIncrementor) {
+    for (CGFloat targetWidth = MMProgressHUDMinimumWidth; numberOfLines > 0; targetWidth += targetWidthIncrementor) {
         if (targetWidth >= MMProgressHUDMaximumWidth){
             break;
         }

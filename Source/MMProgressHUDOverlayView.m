@@ -143,7 +143,7 @@
     CGContextSaveGState(context);
     
     //create copy of overlay color
-    CGColorRef linearColor = CGColorCreateCopyWithAlpha(self.overlayColor, 0.3f);
+    CGColorRef linearColor = CGColorCreateCopyWithAlpha(self.overlayColor, 0.5f);
     
     CGContextSetFillColorWithColor(context, linearColor);
     CGContextFillRect(context, rect);
